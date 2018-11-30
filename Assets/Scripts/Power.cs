@@ -39,11 +39,11 @@ public class Power : MonoBehaviour
             if(nivelPower <= 100)
                 nivelPower += quantiaPower;
         }
-        if(Input.GetKeyDown(KeyCode.J) && nivelPower >= 100 && powerDemonioUi.activeSelf == true)
+        if((Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z)) && nivelPower >= 100 && powerDemonioUi.activeSelf == true)
         {
             AtivarPowerAnjo();
         }
-        if (Input.GetKeyDown(KeyCode.L) && nivelPower >= 100 && powerAnjoUi.activeSelf == true)
+        if ((Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.C)) && nivelPower >= 100 && powerAnjoUi.activeSelf == true)
         {
             AtivarPowerDemonio();
         }

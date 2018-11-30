@@ -10,6 +10,16 @@ public class Cenas : MonoBehaviour
         StartCoroutine(Vai(nome, tempo));
     }
 
+    public void TrocarPara()
+    {
+        SceneManager.LoadSceneAsync("LoadJogo");
+    }
+
+    public void Trocar(string nome)
+    {
+        SceneManager.LoadSceneAsync(nome);
+    }
+
     private IEnumerator Vai(string nome, float tempo)
     {
         yield return new WaitForSeconds(tempo);

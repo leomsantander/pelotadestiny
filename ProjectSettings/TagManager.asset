@@ -12,6 +12,7 @@ TagManager:
   - Boss
   - hpd
   - hpa
+  - EGG
   layers:
   - Default
   - TransparentFX

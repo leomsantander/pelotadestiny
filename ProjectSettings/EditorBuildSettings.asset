@@ -6,9 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LoadCutscene.unity
+    guid: a33940f80d03dc646b28764ea0370e32
+  - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: 92624d62320d6cf4dbf90d82b2028d87
+  - enabled: 1
     path: Assets/Scenes/LoadJogo.unity
     guid: c00869aa697c400498fd1cbf60bcf07f
   - enabled: 1
     path: Assets/Scenes/Jogo.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/FinalAnjo.unity
+    guid: ff452371c6b77d64e98f85e984fe0357
+  - enabled: 1
+    path: Assets/Scenes/LoadFinalAnjo.unity
+    guid: 485a4d3f771f2ae4eb34bd7af57b3f92
+  - enabled: 1
+    path: Assets/Scenes/LoadFinalDemonio.unity
+    guid: 645f94b1e39264d42a6aebc8c782faca
+  - enabled: 1
+    path: Assets/Scenes/FinalDemonio.unity
+    guid: 028084610621c2745b54bc6376a76f27
   m_configObjects: {}

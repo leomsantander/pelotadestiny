@@ -1,9 +1,15 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Mateus Bomfim/Desktop/Builds/Windows/Pelota Destiny/Pelota Destiny.exe
+C:/Users/Mateus Bomfim/Desktop/Builds/Unity/Windows/Pelota Destiny/Pelota Destiny.exe
 SceneListBegin?
+Assets/Scenes/LoadCutscene.unity
+Assets/Scenes/Cutscene.unity
 Assets/Scenes/LoadJogo.unity
 Assets/Scenes/Jogo.unity
+Assets/Scenes/FinalAnjo.unity
+Assets/Scenes/LoadFinalAnjo.unity
+Assets/Scenes/LoadFinalDemonio.unity
+Assets/Scenes/FinalDemonio.unity
 SceneListEnd?
 a78ab0ea8aa395be434aace1157f9844 Assembly-CSharp.dll:.BarraNivel
 c422dd62785a6d0afa870fbd111886ce Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -21,7 +27,7 @@ c7dd12c15208b0447e101f80038706df UnityEngine.Timeline.dll:UnityEngine.Timeline.A
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 64f3a13c1277a7f1324321d93d0ec13b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-73be71298e1fd1f394eb6cae06e66f03 Assembly-CSharp.dll:.Pelota
+ac7af0fba25c6bb401c906da6249cce4 Assembly-CSharp.dll:.Pelota
 95c241412033d75da3b2703947abc86e Assembly-CSharp-firstpass.dll:UnityStandardAssets.Effects.ParticleSystemMultiplier
 96d0c5759a71bea7a88267fb02be011e Assembly-CSharp.dll:.TruePower
 e233d1c5f4779b563724f49ce957b012 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Characters.ThirdPerson.AICharacterControl

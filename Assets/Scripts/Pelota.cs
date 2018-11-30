@@ -22,29 +22,59 @@ public class Pelota : MonoBehaviour
     [SerializeField] private Cenas cenas;
     [SerializeField] private GameObject bossAnjo;
     [SerializeField] private GameObject bossDemonio;
+    [SerializeField] private bool egg = false;
+    [SerializeField] private GameObject ester;
+    [SerializeField] private GameObject butao;
 
     private void Update()
     {
         if (!jogo) return;
+
+        if (egg == true)
+        {
+            butao.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (ester.activeSelf)
+                {
+                    ester.SetActive(false);
+                    Time.timeScale = 1f;
+                }
+                else
+                {
+                    ester.SetActive(true);
+                    Time.timeScale = 0f;
+                }
+            }
+        }
+        else
+        {
+            butao.SetActive(false);
+        }
         if (nivel>=1)
         {
             bossAnjo.SetActive(true);
-            if (bossAnjo.GetComponent<Boss>().hp <= 0)
-            {
-                jogo = false;
-                cenas.TrocarParaDepoisDe("LoadJogo", 1.5f);
-            }
+           
+        }
+        if (bossAnjo.GetComponent<Boss>().hp <= 0)
+        {
+            jogo = false;
+            cenas.TrocarParaDepoisDe("LoadFinalDemonio", 1.5f);
         }
         if (nivel <= 0)
         {
             bossDemonio.SetActive(true);
-            if (bossDemonio.GetComponent<Boss>().hp <= 0)
-            {
-                jogo = false;
-                cenas.TrocarParaDepoisDe("LoadJogo", 1.5f);
-            }
+            
         }
-
+        if (bossDemonio.GetComponent<Boss>().hp <= 0)
+        {
+            jogo = false;
+            cenas.TrocarParaDepoisDe("LoadFinalAnjo", 1.5f);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            cenas.TrocarParaDepoisDe("LoadJogo", 0f);
+        }
         
         if (!bossDemonio.activeSelf || !bossAnjo.activeSelf)
         {
@@ -62,7 +92,7 @@ public class Pelota : MonoBehaviour
                     multplicadorCor -= 0.1f;
             }
         }
-        if (Input.GetKeyDown(KeyCode.K) && !ataque)
+        if ((Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.X)) && !ataque)
         {
             ataque = true;
             anim.SetTrigger("ataque");
@@ -93,6 +123,7 @@ public class Pelota : MonoBehaviour
 
     public void SomarNivel(float valor)
     {
+        if(bossDemonio || bossAnjo)
         if (bossDemonio.activeSelf || bossAnjo.activeSelf) return;
             nivel +=valor;
     }
@@ -164,6 +195,23 @@ public class Pelota : MonoBehaviour
             Destroy(collision.transform.gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag.Equals("EGG"))
+        {
+            egg = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag.Equals("EGG"))
+        {
+            egg = false;
+        }
+    }
+
     public void GameOver()
     {
         jogo = false;
@@ -172,13 +220,13 @@ public class Pelota : MonoBehaviour
         explosao.TocarRandomico();
         if (nivel > 0.5f)
         {
-            GameObject alma = Instantiate(almaPelota[0]);
+            GameObject alma = Instantiate(almaPelota[1]);
             
             alma.transform.position = offset;
         }
         else if(nivel < 0.5f)
         {
-            GameObject alma = Instantiate(almaPelota[1]);
+            GameObject alma = Instantiate(almaPelota[0]);
 
             alma.transform.position = offset;
         }
